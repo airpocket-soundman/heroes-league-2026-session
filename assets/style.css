@@ -336,7 +336,7 @@ body.doc { display: block; overflow: auto; height: auto; }
   --doc-scale: 1;
   max-width: 50em;
   margin: 0 auto;
-  padding: clamp(28px, 5vh, 64px) clamp(24px, 7vw, 110px) clamp(60px, 12vh, 140px);
+  padding: clamp(28px, 5vh, 64px) clamp(12px, 3.5vw, 55px) clamp(60px, 12vh, 140px);
 }
 
 .doc-head {
