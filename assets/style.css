@@ -1,13 +1,15 @@
 /* Heroes League 2026 session pages - shared style */
 
 :root {
-  --bg:        #0d1117;
-  --bg-soft:   #161b22;
-  --line:      #2a323d;
-  --fg:        #e8eef5;
-  --fg-dim:    #98a4b3;
-  --accent:    #4dd4e8;
-  --accent-2:  #ff6b6b;
+  --bg:        #f7f7f4;
+  --bg-soft:   #ffffff;
+  --line:      #e3e3dc;
+  --fg:        #1b1f26;
+  --fg-dim:    #6a7280;
+  --accent:    #0f8ea3;
+  --accent-2:  #d9544a;
+  --idea:      #3f55c0;
+  --shadow:    0 1px 2px rgba(27,31,38,.05), 0 4px 14px rgba(27,31,38,.05);
   --radius:    14px;
   --maxw:      1280px;
 }
@@ -42,7 +44,7 @@ a { color: var(--accent); }
 /* ---------- 波の装飾 ---------- */
 .wave-top {
   height: 6px;
-  background: linear-gradient(90deg, var(--accent) 0%, #6c8cff 50%, var(--accent-2) 100%);
+  background: linear-gradient(90deg, var(--accent) 0%, var(--idea) 50%, var(--accent-2) 100%);
   flex: 0 0 auto;
 }
 
@@ -91,6 +93,7 @@ a { color: var(--accent); }
   background: var(--bg-soft);
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
   padding: clamp(12px, 1.9vh, 20px);
 }
 .axis .num {
@@ -131,11 +134,12 @@ a { color: var(--accent); }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: clamp(11px, 1.7vh, 18px);
+  box-shadow: var(--shadow);
   text-decoration: none;
   color: inherit;
   transition: border-color .15s, transform .15s;
 }
-.work-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.work-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(27,31,38,.10); }
 .work-card .idx {
   font-size: clamp(10px, 1.2vh, 12px);
   color: var(--accent);
@@ -207,7 +211,7 @@ a { color: var(--accent); }
   border-left: 4px solid var(--accent);
   line-height: 1.3;
 }
-.col--idea > h2 { border-left-color: #6c8cff; }
+.col--idea > h2 { border-left-color: var(--idea); }
 .col--video > h2 { border-left-color: var(--accent-2); }
 
 .col ul { margin: 0; padding-left: 1.15em; }
@@ -217,7 +221,7 @@ a { color: var(--accent); }
   line-height: 1.6;
 }
 .col li strong { color: var(--accent); font-weight: 600; }
-.col--idea li strong { color: #8fa6ff; }
+.col--idea li strong { color: var(--idea); }
 
 .lead {
   font-size: clamp(14px, 1.9vh, 17px);
@@ -226,6 +230,7 @@ a { color: var(--accent); }
   border-radius: var(--radius);
   padding: clamp(10px, 1.5vh, 16px);
   margin: 0 0 .8em;
+  box-shadow: var(--shadow);
 }
 
 .video-frame {
@@ -258,9 +263,9 @@ a { color: var(--accent); }
   color: var(--fg);
   transition: border-color .15s, background .15s;
 }
-.btn:hover { border-color: var(--accent); background: #1b2430; }
-.btn--primary { background: var(--accent); color: #06222a; border-color: var(--accent); font-weight: 700; }
-.btn--primary:hover { background: #6ee2f2; color: #06222a; }
+.btn:hover { border-color: var(--accent); background: #eef6f8; }
+.btn--primary { background: var(--accent); color: #ffffff; border-color: var(--accent); font-weight: 700; }
+.btn--primary:hover { background: #0b7789; color: #ffffff; }
 
 .work-foot {
   margin-top: clamp(10px, 1.8vh, 20px);
@@ -277,9 +282,9 @@ a { color: var(--accent); }
 .work-foot a { text-decoration: none; }
 
 .todo {
-  color: #f0c674;
-  border: 1px dashed #6b5c33;
-  background: #241f13;
+  color: #8a6116;
+  border: 1px dashed #d9bd7d;
+  background: #fdf5e2;
   border-radius: 8px;
   padding: .1em .5em;
   font-size: .92em;
@@ -311,9 +316,9 @@ a { color: var(--accent); }
   z-index: 60;
   width: min(460px, 92vw);
   height: 100%;
-  background: #11161d;
+  background: #ffffff;
   border-left: 1px solid var(--line);
-  box-shadow: -18px 0 40px rgba(0,0,0,.45);
+  box-shadow: -18px 0 40px rgba(27,31,38,.14);
   padding: 22px 24px 28px;
   overflow-y: auto;
   transform: translateX(102%);
@@ -344,8 +349,8 @@ a { color: var(--accent); }
   font-size: 11px;
   letter-spacing: .1em;
   color: var(--accent-2);
-  border: 1px solid #4a2c2c;
-  background: #221618;
+  border: 1px solid #f0cdc9;
+  background: #fdeeec;
   border-radius: 6px;
   padding: .1em .6em;
   margin-bottom: .5em;
