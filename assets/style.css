@@ -374,18 +374,14 @@ a { color: var(--accent); }
   font-weight: 600;
 }
 
-/* ---------- ロゴ ---------- */
-.logo { display: block; }
-.logo--cover {
-  width: clamp(46px, 7.2vh, 76px);
-  height: auto;
-  margin-bottom: clamp(8px, 1.4vh, 16px);
-}
-.logo--work {
-  width: clamp(26px, 3.6vh, 38px);
-  height: auto;
-  margin-left: auto;
-  margin-bottom: .35em;
+/* ---------- ロゴ（文字と同じ大きさでインライン表示） ---------- */
+.logo-inline {
+  display: inline-block;
+  width: 1.05em;
+  height: 1.05em;
+  object-fit: contain;
+  vertical-align: -0.16em;
+  margin-right: .4em;
 }
 
 .foot-links { display: inline-flex; gap: 1.2em; flex-wrap: wrap; }
