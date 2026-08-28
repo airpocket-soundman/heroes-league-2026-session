@@ -301,10 +301,42 @@ a { color: var(--accent); }
 /* ---------- 原稿ページ ---------- */
 body.doc { display: block; overflow: auto; height: auto; }
 
+.doc-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  flex-wrap: wrap;
+  padding: 10px clamp(20px, 5vw, 64px);
+  background: rgba(255, 255, 255, .93);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.doc-bar-title { font-size: 14px; font-weight: 700; color: var(--fg-dim); }
+
+.font-ctrl { display: flex; gap: 6px; }
+.font-ctrl button {
+  font: inherit;
+  font-size: 14px;
+  line-height: 1;
+  padding: .5em .9em;
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--fg);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.font-ctrl button:hover { border-color: var(--accent); background: #eef6f8; }
+
 .doc-page {
-  max-width: 46em;
+  --doc-scale: 1;
+  max-width: 50em;
   margin: 0 auto;
-  padding: clamp(28px, 5vh, 64px) clamp(20px, 5vw, 40px) clamp(60px, 12vh, 140px);
+  padding: clamp(28px, 5vh, 64px) clamp(24px, 7vw, 110px) clamp(60px, 12vh, 140px);
 }
 
 .doc-head {
@@ -313,15 +345,15 @@ body.doc { display: block; overflow: auto; height: auto; }
   margin-bottom: clamp(20px, 3.4vh, 40px);
 }
 .doc-head h1 {
-  font-size: clamp(26px, 4.2vh, 40px);
+  font-size: calc(34px * var(--doc-scale));
   font-weight: 800;
   line-height: 1.25;
   margin: 0 0 .2em;
 }
-.doc-sub { margin: 0; color: var(--fg-dim); font-size: 15px; }
+.doc-sub { margin: 0; color: var(--fg-dim); font-size: calc(15px * var(--doc-scale)); }
 
 .doc-page h2 {
-  font-size: clamp(19px, 2.8vh, 26px);
+  font-size: calc(24px * var(--doc-scale));
   font-weight: 700;
   line-height: 1.35;
   margin: clamp(38px, 6vh, 68px) 0 clamp(16px, 2.4vh, 26px);
@@ -331,7 +363,7 @@ body.doc { display: block; overflow: auto; height: auto; }
 .doc-page h2:first-of-type { margin-top: clamp(8px, 1.4vh, 16px); }
 
 .doc-page p {
-  font-size: clamp(15px, 1.15em, 18px);
+  font-size: calc(17px * var(--doc-scale));
   line-height: 2.05;
   margin: 0 0 1.9em;
 }

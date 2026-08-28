@@ -10,6 +10,15 @@
 <body class="doc">
 <div class="wave-top"></div>
 
+<div class="doc-bar">
+  <span class="doc-bar-title"><img class="logo-inline" src="assets/logo.png" alt="">原稿 ／ ヒーローズ・リーグ 2026 セッション</span>
+  <span class="font-ctrl">
+    <button type="button" id="font-down" title="文字を小さく">A−</button>
+    <button type="button" id="font-reset" title="標準サイズに戻す">標準</button>
+    <button type="button" id="font-up" title="文字を大きく">A＋</button>
+  </span>
+</div>
+
 <article class="doc-page">
 
   <header class="doc-head">
@@ -47,5 +56,25 @@
   <p>正直、どこまでやっちゃっていいのか最初はよくわからなかったんですが、前年優勝者の wararyo さんから「思いっきりやっちゃった方がいいよ」というアドバイスをいただいたので、振り切って、精一杯悪乗りした動画を作ることにしています。</p>
 
 </article>
+
+<script>
+(function () {
+  var doc = document.querySelector('.doc-page');
+  var MIN = 0.8, MAX = 2.4, STEP = 0.1;
+  var scale = 1;
+  try { var v = parseFloat(localStorage.getItem('docScale')); if (v >= MIN && v <= MAX) scale = v; } catch (e) {}
+
+  function apply() {
+    doc.style.setProperty('--doc-scale', scale.toFixed(2));
+    try { localStorage.setItem('docScale', scale.toFixed(2)); } catch (e) {}
+  }
+  function bump(d) { scale = Math.min(MAX, Math.max(MIN, Math.round((scale + d) * 100) / 100)); apply(); }
+
+  document.getElementById('font-up').addEventListener('click', function () { bump(STEP); });
+  document.getElementById('font-down').addEventListener('click', function () { bump(-STEP); });
+  document.getElementById('font-reset').addEventListener('click', function () { scale = 1; apply(); });
+  apply();
+})();
+</script>
 </body>
 </html>
