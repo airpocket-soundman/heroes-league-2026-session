@@ -16,6 +16,9 @@
       btn.textContent = open ? '原稿を隠す (N)' : '原稿 (N)';
     }
 
+    // URL に #notes / ?notes=1 が付いていれば最初から開く（原稿だけを見たいとき用）
+    if (location.hash === '#notes' || /[?&]notes=1/.test(location.search)) toggle(true);
+
     btn.addEventListener('click', function () { toggle(); });
     document.addEventListener('keydown', function (e) {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
