@@ -365,3 +365,11 @@ a { color: var(--accent); }
 /* 表紙: 作品一覧を置かない構成のため、主要ブロックを縦中央に */
 .cover-main { margin: auto 0; }
 .cover-main .axes { margin-bottom: 0; }
+
+/* 動画カラムの「音を出して」注記 */
+.sound-note {
+  margin: 0 0 .7em;
+  font-size: clamp(11px, 1.45vh, 13.5px);
+  color: var(--accent-2);
+  font-weight: 600;
+}
