@@ -11,7 +11,7 @@
   --idea:      #3f55c0;
   --shadow:    0 1px 2px rgba(27,31,38,.05), 0 4px 14px rgba(27,31,38,.05);
   --radius:    14px;
-  --maxw:      1280px;
+  --maxw:      100%;
 }
 
 * { box-sizing: border-box; }
@@ -54,7 +54,7 @@ a { color: var(--accent); }
   width: 100%;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: clamp(18px, 3vh, 40px) clamp(20px, 4vw, 56px);
+  padding: clamp(16px, 2.6vh, 32px) clamp(14px, 1.6vw, 26px);
   display: flex;
   flex-direction: column;
   min-height: 0;
