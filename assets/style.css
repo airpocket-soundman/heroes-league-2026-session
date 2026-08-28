@@ -426,3 +426,5 @@ a { color: var(--accent); }
   color: var(--fg-dim);
   line-height: 1.6;
 }
+
+.sound-lead { color: var(--accent-2); font-weight: 700; }
