@@ -1,0 +1,286 @@
+/* Heroes League 2026 session pages - shared style */
+
+:root {
+  --bg:        #0d1117;
+  --bg-soft:   #161b22;
+  --line:      #2a323d;
+  --fg:        #e8eef5;
+  --fg-dim:    #98a4b3;
+  --accent:    #4dd4e8;
+  --accent-2:  #ff6b6b;
+  --radius:    14px;
+  --maxw:      1280px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+               "BIZ UDPGothic", "Yu Gothic", Meiryo, system-ui, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 画面共有前提: 1画面に収める。収まらない環境ではスクロールを許可 */
+@media (max-height: 620px), (max-width: 780px) {
+  body { overflow: auto; height: auto; min-height: 100%; }
+}
+
+a { color: var(--accent); }
+
+/* ---------- 波の装飾 ---------- */
+.wave-top {
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent) 0%, #6c8cff 50%, var(--accent-2) 100%);
+  flex: 0 0 auto;
+}
+
+/* ---------- 共通レイアウト ---------- */
+.page {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(18px, 3vh, 40px) clamp(20px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.eyebrow {
+  font-size: clamp(12px, 1.4vh, 15px);
+  letter-spacing: .18em;
+  color: var(--fg-dim);
+  text-transform: uppercase;
+  margin: 0 0 .6em;
+}
+
+/* ---------- 表紙 ---------- */
+.cover-title {
+  font-size: clamp(34px, 6.4vh, 68px);
+  line-height: 1.15;
+  margin: 0 0 .25em;
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+.cover-sub {
+  font-size: clamp(15px, 2.1vh, 21px);
+  color: var(--fg-dim);
+  margin: 0 0 clamp(14px, 2.4vh, 28px);
+}
+.cover-sub strong { color: var(--fg); font-weight: 600; }
+
+.axes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 1.6vw, 18px);
+  margin-bottom: clamp(14px, 2.6vh, 30px);
+}
+.axis {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(12px, 1.9vh, 20px);
+}
+.axis .num {
+  color: var(--accent);
+  font-size: clamp(11px, 1.3vh, 13px);
+  letter-spacing: .16em;
+  font-weight: 700;
+}
+.axis h2 {
+  font-size: clamp(16px, 2.3vh, 22px);
+  margin: .2em 0 .3em;
+}
+.axis p {
+  margin: 0;
+  font-size: clamp(12px, 1.6vh, 15px);
+  color: var(--fg-dim);
+  line-height: 1.6;
+}
+
+.works-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1em;
+  margin-bottom: .6em;
+}
+.works-head h2 { font-size: clamp(15px, 2vh, 19px); margin: 0; }
+.works-head span { font-size: clamp(11px, 1.4vh, 13px); color: var(--fg-dim); }
+
+.works {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(9px, 1.4vw, 16px);
+  min-height: 0;
+}
+.work-card {
+  display: block;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(11px, 1.7vh, 18px);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .15s, transform .15s;
+}
+.work-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.work-card .idx {
+  font-size: clamp(10px, 1.2vh, 12px);
+  color: var(--accent);
+  letter-spacing: .14em;
+  font-weight: 700;
+}
+.work-card h3 {
+  font-size: clamp(14px, 1.95vh, 18px);
+  margin: .25em 0 .3em;
+  line-height: 1.35;
+}
+.work-card p {
+  margin: 0;
+  font-size: clamp(11px, 1.45vh, 13.5px);
+  color: var(--fg-dim);
+  line-height: 1.55;
+}
+
+.cover-foot {
+  margin-top: auto;
+  padding-top: clamp(10px, 1.8vh, 20px);
+  font-size: clamp(11px, 1.4vh, 13px);
+  color: var(--fg-dim);
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+/* ---------- 作品まとめページ ---------- */
+.work-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5em;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: clamp(8px, 1.4vh, 16px);
+  margin-bottom: clamp(12px, 2.2vh, 24px);
+}
+.work-head h1 {
+  font-size: clamp(26px, 4.4vh, 46px);
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 800;
+}
+.work-head .meta {
+  font-size: clamp(11px, 1.4vh, 13px);
+  color: var(--fg-dim);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.9fr;
+  gap: clamp(12px, 1.8vw, 26px);
+  flex: 1 1 auto;
+  min-height: 0;
+}
+@media (max-width: 980px) {
+  .cols { grid-template-columns: 1fr; }
+}
+
+.col { display: flex; flex-direction: column; min-height: 0; }
+.col > h2 {
+  font-size: clamp(14px, 1.9vh, 18px);
+  margin: 0 0 .5em;
+  padding-left: .55em;
+  border-left: 4px solid var(--accent);
+  line-height: 1.3;
+}
+.col--idea > h2 { border-left-color: #6c8cff; }
+.col--video > h2 { border-left-color: var(--accent-2); }
+
+.col ul { margin: 0; padding-left: 1.15em; }
+.col li {
+  font-size: clamp(13px, 1.75vh, 16px);
+  margin-bottom: .5em;
+  line-height: 1.6;
+}
+.col li strong { color: var(--accent); font-weight: 600; }
+.col--idea li strong { color: #8fa6ff; }
+
+.lead {
+  font-size: clamp(14px, 1.9vh, 17px);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(10px, 1.5vh, 16px);
+  margin: 0 0 .8em;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: .7em;
+}
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-frame .placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--fg-dim); font-size: clamp(11px, 1.4vh, 13px); text-align: center; padding: 1em;
+}
+
+.links { display: flex; flex-direction: column; gap: .4em; margin-top: auto; }
+.btn {
+  display: block;
+  text-align: center;
+  padding: .6em 1em;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: clamp(12px, 1.55vh, 14.5px);
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--fg);
+  transition: border-color .15s, background .15s;
+}
+.btn:hover { border-color: var(--accent); background: #1b2430; }
+.btn--primary { background: var(--accent); color: #06222a; border-color: var(--accent); font-weight: 700; }
+.btn--primary:hover { background: #6ee2f2; color: #06222a; }
+
+.work-foot {
+  margin-top: clamp(10px, 1.8vh, 20px);
+  padding-top: clamp(8px, 1.2vh, 14px);
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  font-size: clamp(11px, 1.4vh, 13px);
+  color: var(--fg-dim);
+  flex-wrap: wrap;
+}
+.work-foot a { text-decoration: none; }
+
+.todo {
+  color: #f0c674;
+  border: 1px dashed #6b5c33;
+  background: #241f13;
+  border-radius: 8px;
+  padding: .1em .5em;
+  font-size: .92em;
+}
