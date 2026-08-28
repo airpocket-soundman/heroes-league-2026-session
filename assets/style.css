@@ -361,3 +361,7 @@ a { color: var(--accent); }
   .notes-toggle { display: none; }
   .notes { position: static; transform: none; width: auto; height: auto; box-shadow: none; border: 0; overflow: visible; }
 }
+
+/* 表紙: 作品一覧を置かない構成のため、主要ブロックを縦中央に */
+.cover-main { margin: auto 0; }
+.cover-main .axes { margin-bottom: 0; }
