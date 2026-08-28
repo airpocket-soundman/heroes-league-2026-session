@@ -364,7 +364,7 @@ a { color: var(--accent); }
 
 /* 表紙: 作品一覧を置かない構成のため、主要ブロックを縦中央に */
 .cover-main { margin: auto 0; }
-.cover-main .axes { margin-bottom: 0; }
+.cover-main .axes { margin-bottom: clamp(12px, 2.2vh, 24px); }
 
 /* 動画カラムの「音を出して」注記 */
 .sound-note {
@@ -387,3 +387,51 @@ a { color: var(--accent); }
 .foot-links { display: inline-flex; gap: 1.2em; flex-wrap: wrap; }
 
 .btn--quiet { font-size: clamp(11px, 1.35vh, 13px); color: var(--fg-dim); }
+
+/* ---------- 表紙: 3軸カードの下のツール導線 ---------- */
+.promo {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.6vw, 22px);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(13px, 2vh, 22px) clamp(16px, 2vw, 26px);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .15s, transform .15s, box-shadow .15s;
+}
+.promo:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(27,31,38,.10);
+}
+.promo-label {
+  flex: 0 0 auto;
+  font-size: clamp(10px, 1.2vh, 12px);
+  letter-spacing: .16em;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--accent);
+  border-radius: 6px;
+  padding: .3em .7em;
+}
+.promo-body { display: flex; flex-direction: column; min-width: 0; }
+.promo-title {
+  font-size: clamp(17px, 2.6vh, 25px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--accent);
+}
+.promo-desc {
+  font-size: clamp(12px, 1.6vh, 15px);
+  color: var(--fg-dim);
+  line-height: 1.55;
+}
+.promo-arrow {
+  margin-left: auto;
+  font-size: clamp(18px, 2.6vh, 26px);
+  color: var(--accent);
+}
