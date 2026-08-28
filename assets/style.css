@@ -435,3 +435,11 @@ a { color: var(--accent); }
   font-size: clamp(18px, 2.6vh, 26px);
   color: var(--accent);
 }
+
+/* 動画カラムの補足テキスト */
+.note-small {
+  margin: 0 0 .8em;
+  font-size: clamp(11px, 1.45vh, 13.5px);
+  color: var(--fg-dim);
+  line-height: 1.6;
+}
