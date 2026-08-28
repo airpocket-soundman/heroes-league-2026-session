@@ -373,3 +373,21 @@ a { color: var(--accent); }
   color: var(--accent-2);
   font-weight: 600;
 }
+
+/* ---------- ロゴ ---------- */
+.logo { display: block; }
+.logo--cover {
+  width: clamp(46px, 7.2vh, 76px);
+  height: auto;
+  margin-bottom: clamp(8px, 1.4vh, 16px);
+}
+.logo--work {
+  width: clamp(26px, 3.6vh, 38px);
+  height: auto;
+  margin-left: auto;
+  margin-bottom: .35em;
+}
+
+.foot-links { display: inline-flex; gap: 1.2em; flex-wrap: wrap; }
+
+.btn--quiet { font-size: clamp(11px, 1.35vh, 13px); color: var(--fg-dim); }
