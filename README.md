@@ -18,6 +18,7 @@ airpocket（ヒーローズ・リーグ 2025 MAヒーロー）による HL2026 �
 ## 編集方法
 
 各作品ページの `TODO` と書かれた箇所を書き換える。
+話す原稿は各ページ末尾の `<aside class="notes">` 内に書く（画面には出ない。N キーまたは右下のボタンで開閉）。
 動画は `.video-frame` 内の `.placeholder` を YouTube の iframe に差し替える。
 
 ## 公開
