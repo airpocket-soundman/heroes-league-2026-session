@@ -425,3 +425,5 @@ body.doc { display: block; overflow: auto; height: auto; }
   font-size: clamp(18px, 2.6vh, 26px);
   color: var(--accent);
 }
+
+.todo-p { color: #8a6116; }
