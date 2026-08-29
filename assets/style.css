@@ -216,13 +216,13 @@ a { color: var(--accent); }
   border-top: 5px solid var(--accent);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: clamp(14px, 2.2vh, 24px) clamp(15px, 1.6vw, 26px);
+  padding: clamp(16px, 2.6vh, 30px) clamp(16px, 1.8vw, 30px);
 }
 .col--idea { border-top-color: var(--idea); }
 .col--video { border-top-color: var(--accent-2); }
 .col > h2 {
-  font-size: clamp(15px, 2.1vh, 21px);
-  margin: 0 0 clamp(9px, 1.5vh, 16px);
+  font-size: clamp(16px, 2.4vh, 24px);
+  margin: 0 0 clamp(10px, 1.8vh, 20px);
   padding-bottom: .5em;
   border-bottom: 1px solid var(--line);
   line-height: 1.3;
@@ -235,12 +235,12 @@ a { color: var(--accent); }
   padding-left: 1.1em;
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1.5vh, 16px);
+  gap: clamp(10px, 2vh, 24px);
 }
 .col li {
-  font-size: clamp(14px, 2.1vh, 22px);
+  font-size: clamp(16px, 3.1vh, 32px);
   margin: 0;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 .col li::marker { color: var(--accent); }
 .col--idea li::marker { color: var(--idea); }
